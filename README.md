@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+#  Companies Directory – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for the **Companies Directory** project built using **React.js**.
+It allows users to browse, search, filter, and sort companies with a clean and responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Live Demo
 
-### `npm start`
+https://flm-frontend-chi.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Tech Stack
 
-### `npm test`
+* React.js (Create React App)
+* CSS (Custom Styling)
+* JavaScript (ES6+)
+* REST API Integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+##  Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Search companies by name
+*  Filter by location
+*  Filter by industry
+*  Sort by name or number of employees
+*  Pagination support
+*  Fully responsive design
+*  Custom dropdown components (replaces native select)
+*  Loading and error handling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  Folder Structure
 
-### `npm run eject`
+```
+src/
+│
+├── components/
+│   ├── CompanyCard.jsx
+│   ├── CustomDropdown.jsx
+│   ├── Pagination.jsx
+│   ├── Loader.jsx
+│   └── Error.jsx
+│
+├── layout/
+│   └── Sidebar.jsx
+│
+├── pages/
+│   └── Home.jsx
+│
+├── services/
+│   └── api.js
+│
+├── App.js
+└── index.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##  API Integration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The frontend connects to a backend API built with Node.js and Express.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Base URL:
 
-## Learn More
+```
+REACT_APP_API_URL=https://flm-backend.onrender.com/api
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Endpoints Used:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `/companies` → Get companies with filters & pagination
+* `/locations` → Get unique locations
+* `/industries` → Get unique industries
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##  Setup Instructions
 
-### Analyzing the Bundle Size
+### 1. Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git clone https://github.com/KJayaraju/flm_frontend.git
+cd your-frontend-repo
+```
 
-### Making a Progressive Web App
+### 2. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+npm install
+```
 
-### Advanced Configuration
+### 3. Create `.env` file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+REACT_APP_API_URL=https://flm-backend.onrender.com/api
+```
 
-### Deployment
+### 4. Run the app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+npm start
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  Key Implementation Details
+
+* **State Management**: Managed using React Hooks (`useState`, `useEffect`)
+* **Reusable Components**: Modular components like dropdown, cards, and pagination
+* **Custom Dropdown**: Built instead of native `<select>` for better UI control
+* **Pagination**: Controlled via backend using `page` and `limit`
+* **API Handling**: Centralized API calls using a service layer
+
+---
+
+##  Approach
+
+The application is designed with a focus on:
+
+* Clean UI/UX
+* Component reusability
+* Scalable structure
+* Efficient API integration
+
+
+
+## Future Improvements
+
+* Multi-select filters
+* Sorting order toggle (ASC/DESC)
+* Infinite scroll
+* Better animations
+* User authentication
+
+---
+
+##Acknowledgements
+
+* Backend powered by Node.js, Express & MongoDB Atlas
+* Data generated using Faker.js
+
+---
+
+##  Contact
+
+Jayaraju Kolli
+jayarajukolli123@gmail.com
