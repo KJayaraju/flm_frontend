@@ -35,6 +35,7 @@ export default function Header({ filters, setFilters, setPage }) {
       <div>
         <h1>Companies Directory</h1>
         <p>Browse companies</p>
+        <p>🔽 Filter</p>
       </div>
 
       <div className="filters">
@@ -69,10 +70,18 @@ export default function Header({ filters, setFilters, setPage }) {
   placeholder="All Locations"
 />
 
-        <select name="sort" onChange={handleChange}>
-          <option value="name">Sort: Name</option>
-          <option value="employees">Sort: Employees</option>
-        </select>
+        <CustomDropdown
+  options={["name", "employees"]}
+  value={filters.sort}
+  onChange={(value) => {
+    setPage(1);
+    setFilters((prev) => ({
+      ...prev,
+      sort: value,
+    }));
+  }}
+  
+/>
       </div>
     </div>
   );
